@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import m2i.projet.JEE_REST.entity.Livre;
 
 @Repository
-public interface LivreRepository extends JpaRepository<Livre, Integer> {
+public interface LivreRepository extends JpaRepository<Livre, String> {
 
 }

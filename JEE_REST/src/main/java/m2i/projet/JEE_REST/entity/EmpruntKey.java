@@ -1,38 +1,41 @@
 package m2i.projet.JEE_REST.entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class EmpruntKey {
+public class EmpruntKey implements Serializable {
 
-	@Column(name = "id_emprunteur")
-	private Integer idEmprunteur;
+	private static final long serialVersionUID = 1L;
+
+	@Column(name = "id_utilisateur")
+	private Integer idUtilisateur;
 	
-	@Column(name = "id_exemplaireEmprunte")
-	private Integer idExemplaireEmprunte;
+	@Column(name = "id_exemplaire")
+	private Integer idExemplaire;
 
-	public Integer getIdEmprunteur() {
-		return idEmprunteur;
+	public Integer getIdUtilisateur() {
+		return idUtilisateur;
 	}
 
-	public void setIdEmprunteur(Integer idEmprunteur) {
-		this.idEmprunteur = idEmprunteur;
+	public void setIdUtilisateur(Integer idUtilisateur) {
+		this.idUtilisateur = idUtilisateur;
 	}
 
-	public Integer getIdExemplaireEmprunte() {
-		return idExemplaireEmprunte;
+	public Integer getIdExemplaire() {
+		return idExemplaire;
 	}
 
-	public void setIdExemplaireEmprunte(Integer idExemplaireEmprunte) {
-		this.idExemplaireEmprunte = idExemplaireEmprunte;
+	public void setIdExemplaire(Integer idExemplaire) {
+		this.idExemplaire = idExemplaire;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(idEmprunteur, idExemplaireEmprunte);
+		return Objects.hash(idExemplaire, idUtilisateur);
 	}
 
 	@Override
@@ -44,8 +47,7 @@ public class EmpruntKey {
 			return false;
 		}
 		EmpruntKey other = (EmpruntKey) obj;
-		return Objects.equals(idEmprunteur, other.idEmprunteur)
-				&& Objects.equals(idExemplaireEmprunte, other.idExemplaireEmprunte);
+		return Objects.equals(idExemplaire, other.idExemplaire) && Objects.equals(idUtilisateur, other.idUtilisateur);
 	}
-	
+
 }
