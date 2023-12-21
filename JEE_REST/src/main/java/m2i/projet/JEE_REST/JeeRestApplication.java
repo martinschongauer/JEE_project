@@ -82,15 +82,12 @@ public class JeeRestApplication implements CommandLineRunner {
 		exemplaireRepository.save(e1);
 		
 		Exemplaire e2 = new Exemplaire("978 2 7654 0912 0", "Mauvais état");
-		exemplaireRepository.save(e2);
+		exemplaireRepository.save(e2); 
 		
 		
 		// Ajout des emprunts
 		Emprunt emp1 = new Emprunt(e1, u1, null, 15);
 		empruntRepository.save(emp1);
-		
-		/*Emprunt emp1 = new Emprunt(u1, e1, null, 15);
-		empruntRepository.save(emp1);*/
 		
         // Recupérer toutes les tables
         /* List<Utilisateur> utilisateurs = utilisateurRepository.findAll();       

@@ -19,8 +19,8 @@ public class Exemplaire {
 	private String isbnLivre;
 	private String integriteLivre;
 	
-	@OneToOne(mappedBy = "exemplaire")
-	private Emprunt emprunt;
+	/* @OneToOne(mappedBy = "exemplaire")
+	private Emprunt emprunt; */
 	
 	public String getIsbnLivre() {
 		return isbnLivre;

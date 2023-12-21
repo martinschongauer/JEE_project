@@ -1,0 +1,51 @@
+
+EMPRUNTS (EmpruntService.java et son implémentation + controllers) - QUENTIN :
+
+- Création d'un emprunt avec une date à 0 = demande de réservation
+- Suppression
+- Lecture de la liste des emprunts
+- Lecture de la liste des emprunts dont la date est à nul
+- Lecture de la liste des emprunts dont la date est dépassée
+- MaJ d'un emprunt (désigné par son Id) : on passe la date à date courante
+- MaJ de l'emprunt pour changer la durée
+
+
+
+UTILISATEURS (UtilisateurService.java et son implémentation + controllers) - JEROME :
+
+- Creer un utilisateur
+- Supprimer un utilisateur par son adresse mail
+- voir un utilisateur par son adresse mail
+- changer les données utilisateur par son adresse mail
+- afficher la liste de tous les utilisateurs
+- afficher la liste des emprunts d'un utilisateur (son adresse mail toujours)
+
+
+
+LIVRES (LivreService.java et son implémentation + controllers) - BAPTISTE :
+
+- Creer un livre
+- Supprimer un livre par son ISBN
+- voir un livre par son ISBN
+- changer les données livre par son ISBN
+
+- afficher la liste de tous les livres
+	-> filtrer par editeur comprenant...
+	-> filtrer par auteur comprenant...
+	-> filtrer par titre comprenant...
+
+(Suggestion de Quentin: ajouter le nombre d'exemplaires dispos ?)
+
+
+------------ ROMANE --------------
+
+EXEMPLAIRES
+
+- trouver le nombre d'exemplaires total et disponibles en fonction de l'ISBN (dans le controleur abonné)
+- trouver le nombre d'exemplaires totaux et empruntés en fonction de l'ISBN (dans le controleur biblio)
+
+
+
+TYPELIVRES / LIVRE ? :
+
+- Une méthode qui affiche tous les livres 

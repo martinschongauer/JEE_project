@@ -6,24 +6,31 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 
 @Entity
 public class Emprunt {
 	
-	@Id
+	/*@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
+	private Integer id;*/
 	
-	@JsonIgnoreProperties
+	/*@JsonIgnoreProperties
 	@OneToOne
 	@JoinColumn(name = "id_exemplaire")
-	Exemplaire exemplaire;
+	Exemplaire exemplaire;*/
+	
+	@Id
+    private Integer id; // Clé primaire de Emprunt
+
+    @OneToOne
+    @MapsId("id")
+    @JoinColumn(name = "id_exemplaire")
+    private Exemplaire exemplaire;
 
 	@JsonIgnoreProperties
 	@ManyToOne
@@ -39,6 +46,7 @@ public class Emprunt {
 
 	public Emprunt(Exemplaire exemplaire, Utilisateur utilisateur, LocalDate dateDebut, Integer dureeEmprunt) {
 		super();
+		this.id = exemplaire.getIdExemplaire();
 		this.exemplaire = exemplaire;
 		this.utilisateur = utilisateur;
 		this.dateDebut = dateDebut;
