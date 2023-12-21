@@ -5,31 +5,30 @@ import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
 
 @Entity
 public class Emprunt {
-
-	@EmbeddedId
-	EmpruntKey id;
 	
-	@JsonIgnoreProperties
-	@ManyToOne
-	@MapsId("idUtilisateur")
-	@JoinColumn(name = "id_utilisateur")
-	Utilisateur utilisateur;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
 	
 	@JsonIgnoreProperties
 	@OneToOne
-	@MapsId("idExemplaire")
 	@JoinColumn(name = "id_exemplaire")
 	Exemplaire exemplaire;
+
+	@JsonIgnoreProperties
+	@ManyToOne
+	@JoinColumn(name = "id_utilisateur")
+	Utilisateur utilisateur;
 	
 	private LocalDate dateDebut;
 	private Integer dureeEmprunt;
@@ -38,12 +37,28 @@ public class Emprunt {
 		super();
 	}
 
-	public Emprunt(Utilisateur utilisateur, Exemplaire exemplaire, LocalDate dateDebut, Integer dureeEmprunt) {
+	public Emprunt(Exemplaire exemplaire, Utilisateur utilisateur, LocalDate dateDebut, Integer dureeEmprunt) {
 		super();
-		this.utilisateur = utilisateur;
 		this.exemplaire = exemplaire;
+		this.utilisateur = utilisateur;
 		this.dateDebut = dateDebut;
 		this.dureeEmprunt = dureeEmprunt;
+	}
+
+	public Exemplaire getExemplaire() {
+		return exemplaire;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setExemplaire(Exemplaire exemplaire) {
+		this.exemplaire = exemplaire;
 	}
 
 	public Utilisateur getUtilisateur() {
@@ -52,14 +67,6 @@ public class Emprunt {
 
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
-	}
-
-	public Exemplaire getExemplaire() {
-		return exemplaire;
-	}
-
-	public void setExemplaire(Exemplaire exemplaire) {
-		this.exemplaire = exemplaire;
 	}
 
 	public LocalDate getDateDebut() {
@@ -76,10 +83,6 @@ public class Emprunt {
 
 	public void setDureeEmprunt(Integer dureeEmprunt) {
 		this.dureeEmprunt = dureeEmprunt;
-	}
-
-	public EmpruntKey getId() {
-		return id;
 	}
 
 	@Override
@@ -103,8 +106,10 @@ public class Emprunt {
 
 	@Override
 	public String toString() {
-		return "Emprunt [id=" + id + ", utilisateur=" + utilisateur.getIdUser() + ", exemplaire=" + exemplaire.getIsbnLivre() + ", dateDebut="
+		return "Emprunt [id=" + id + ", exemplaire=" + exemplaire.getIdExemplaire() + ", utilisateur=" + utilisateur.getIdUser() + ", dateDebut="
 				+ dateDebut + ", dureeEmprunt=" + dureeEmprunt + "]";
 	}
+
+
 
 }

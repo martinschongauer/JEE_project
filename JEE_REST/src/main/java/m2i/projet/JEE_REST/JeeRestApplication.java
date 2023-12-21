@@ -86,7 +86,7 @@ public class JeeRestApplication implements CommandLineRunner {
 		
 		
 		// Ajout des emprunts
-		Emprunt emp1 = new Emprunt(u1, e1, null, 15);
+		Emprunt emp1 = new Emprunt(e1, u1, null, 15);
 		empruntRepository.save(emp1);
 		
 		/*Emprunt emp1 = new Emprunt(u1, e1, null, 15);
