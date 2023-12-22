@@ -70,23 +70,23 @@ public class JeeRestApplication implements CommandLineRunner {
 		
 		
 		// Ajout de quelques livres
-		Livre l1 = new Livre("978 2 7654 0912 0", "Les maths pour les nuls", "Cedric Villani", "Pour les nuls", t1);
+		Livre l1 = new Livre("9782765409120", "Les maths pour les nuls", "Cedric Villani", "Pour les nuls", t1);
 		livreRepository.save(l1);
 		
-		Livre l2 = new Livre("978 2 1337 0912 0", "Quand la machine apprend", "Yann Le Cun", "Odile Jacob", t1);
+		Livre l2 = new Livre("9782133709120", "Quand la machine apprend", "Yann Le Cun", "Odile Jacob", t1);
 		livreRepository.save(l2);
 		
 		
 		// Ajout des exemplaires
-		Exemplaire e1 = new Exemplaire("978 2 7654 0912 0", "Bon état");
+		Exemplaire e1 = new Exemplaire("9782765409120", "Bon état");
 		exemplaireRepository.save(e1);
 		
-		Exemplaire e2 = new Exemplaire("978 2 7654 0912 0", "Mauvais état");
+		Exemplaire e2 = new Exemplaire("9782765409120", "Mauvais état");
 		exemplaireRepository.save(e2); 
 		
 		
 		// Ajout des emprunts
-		Emprunt emp1 = new Emprunt(e1, u1, null, 15);
+		Emprunt emp1 = new Emprunt(e1, u1, null);
 		empruntRepository.save(emp1);
 		
         // Recupérer toutes les tables

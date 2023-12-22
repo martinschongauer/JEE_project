@@ -7,5 +7,4 @@ import m2i.projet.JEE_REST.entity.Exemplaire;
 
 @Repository
 public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer> {
-
 }
