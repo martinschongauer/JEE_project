@@ -2,23 +2,18 @@ package m2i.projet.JEE_REST.dto;
 
 import java.time.LocalDate;
 
-import m2i.projet.JEE_REST.entity.Livre;
-
-public class EmpruntDTO {
+public class EmpruntDateDTO {
 	private LocalDate dateDebut;
 	private Integer dureeEmprunt;
-	private Livre livre;
 	
 	
-	public EmpruntDTO() {
+	public EmpruntDateDTO() {
 		super();
 	}
-	
-	public EmpruntDTO(LocalDate dateDebut, Integer dureeEmprunt, Livre livre) {
+	public EmpruntDateDTO(LocalDate dateDebut, Integer dureeEmprunt) {
 		super();
 		this.dateDebut = dateDebut;
 		this.dureeEmprunt = dureeEmprunt;
-		this.livre = livre;
 	}
 	public LocalDate getDateDebut() {
 		return dateDebut;
@@ -31,19 +26,6 @@ public class EmpruntDTO {
 	}
 	public void setDureeEmprunt(Integer dureeEmprunt) {
 		this.dureeEmprunt = dureeEmprunt;
-	}
-
-	public Livre getLivre() {
-		return livre;
-	}
-
-	public void setLivre(Livre livre) {
-		this.livre = livre;
-	}
-
-	@Override
-	public String toString() {
-		return "EmpruntDTO [dateDebut=" + dateDebut + ", dureeEmprunt=" + dureeEmprunt + ", livre=" + livre + "]";
 	}
 	
 }

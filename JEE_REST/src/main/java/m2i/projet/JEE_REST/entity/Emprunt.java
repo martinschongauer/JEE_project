@@ -33,15 +33,17 @@ public class Emprunt {
 	
 	public Emprunt() {
 		super();
+		this.dureeEmprunt= 21;
+
 	}
 
-	public Emprunt(Exemplaire exemplaire, Utilisateur utilisateur, LocalDate dateDebut, Integer dureeEmprunt) {
+	public Emprunt(Exemplaire exemplaire, Utilisateur utilisateur, LocalDate dateDebut) {
 		super();
 		this.id = exemplaire.getIdExemplaire();
 		this.exemplaire = exemplaire;
 		this.utilisateur = utilisateur;
 		this.dateDebut = dateDebut;
-		this.dureeEmprunt = dureeEmprunt;
+		this.dureeEmprunt = 21;
 	}
 
 	public Exemplaire getExemplaire() {
@@ -57,6 +59,7 @@ public class Emprunt {
 	}
 
 	public void setExemplaire(Exemplaire exemplaire) {
+		this.id = exemplaire.getIdExemplaire();
 		this.exemplaire = exemplaire;
 	}
 

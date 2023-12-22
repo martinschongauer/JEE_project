@@ -8,4 +8,5 @@ import m2i.projet.JEE_REST.entity.Livre;
 @Repository
 public interface LivreRepository extends JpaRepository<Livre, String> {
 
+		public Livre  findByIsbnLivre(String ISBN); 
 }

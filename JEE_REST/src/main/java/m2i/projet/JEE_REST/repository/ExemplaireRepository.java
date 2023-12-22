@@ -10,6 +10,7 @@ import m2i.projet.JEE_REST.entity.Exemplaire;
 
 @Repository
 public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer> {
+<<<<<<< HEAD
 	
 	//Récupérer la liste des exemplaires disponibles pour un livre
 	@Query("SELECT ex FROM Exemplaire ex WHERE ex.isbnLivre like ?1 AND ex.idExemplaire not in (select id from Emprunt)")
@@ -29,4 +30,6 @@ public interface ExemplaireRepository extends JpaRepository<Exemplaire, Integer>
 	//Compter le nombre total d'exemplaire indisponibles d'un livre
 	@Query("SELECT count(ex) FROM Exemplaire ex, Emprunt em WHERE ex.isbnLivre like ?1 AND ex.idExemplaire=em.id")	
 	int countExemplairesIndisponibles(String isbn);
+=======
+>>>>>>> e49f7e3b4ca07034eea6dccda0daf680937c7c9e
 }

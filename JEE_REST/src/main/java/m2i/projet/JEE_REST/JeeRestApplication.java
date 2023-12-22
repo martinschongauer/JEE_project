@@ -90,6 +90,7 @@ public class JeeRestApplication { //implements CommandLineRunner {
 //		Exemplaire e4 = new Exemplaire("9782765409120", null);
 //		exemplaireService.save(e4); 
 		
+<<<<<<< HEAD
 //		Exemplaire e5 = new Exemplaire("9782765409120", null);
 //		exemplaireService.save(e5); 
 //		
@@ -191,4 +192,110 @@ public class JeeRestApplication { //implements CommandLineRunner {
 //		System.out.println(nombreExemplaires);
 //		System.out.println("==============================================================================================");
 //	}
+=======
+		Utilisateur u2 = new Utilisateur("Quentin", "Colombier", "quentin@gmail.com", 1);
+		utilisateurRepository.save(u2);
+		
+		Utilisateur u3 = new Utilisateur("Jerome", "Germain", "jerome@sfr.fr", 1);
+		utilisateurRepository.save(u3);
+        
+		Utilisateur u4 = new Utilisateur("Baptiste", "Hornecker", "baptiste@hotmail.com", 1);
+		utilisateurRepository.save(u4);
+		
+		
+		// Ajout de 3 types de livres
+		TypeLivre t1 = new TypeLivre("Sciences");
+		typeLivreRepository.save(t1);
+		
+		TypeLivre t2 = new TypeLivre("Roman");
+		typeLivreRepository.save(t2);
+		
+		TypeLivre t3 = new TypeLivre("Informatique");
+		typeLivreRepository.save(t3);
+		
+		
+		// Ajout de quelques livres
+		Livre l1 = new Livre("9782765409120", "Les maths pour les nuls", "Cedric Villani", "Pour les nuls", t1);
+		livreRepository.save(l1);
+		
+		Livre l2 = new Livre("9782133709120", "Quand la machine apprend", "Yann Le Cun", "Odile Jacob", t1);
+		livreRepository.save(l2);
+		
+		
+		// Ajout des exemplaires
+		Exemplaire e1 = new Exemplaire("9782765409120", "Bon état");
+		exemplaireRepository.save(e1);
+		
+		Exemplaire e2 = new Exemplaire("9782765409120", "Mauvais état");
+		exemplaireRepository.save(e2); 
+		
+		
+		// Ajout des emprunts
+		Emprunt emp1 = new Emprunt(e1, u1, null);
+		empruntRepository.save(emp1);
+		
+        // Recupérer toutes les tables
+        /* List<Utilisateur> utilisateurs = utilisateurRepository.findAll();       
+        List<TypeLivre> typeslivres = typeLivreRepository.findAll();
+        List<Livre> livres = livreRepository.findAll();
+        List<Exemplaire> exemplaires = exemplaireRepository.findAll();
+        List<Emprunt> emprunts = empruntRepository.findAll();*/ 
+        
+        // Et les afficher !
+        // afficherBaseDeDonnees(utilisateurs, typeslivres, livres, exemplaires, emprunts);
+    }
+	
+	
+	/* private static void createDataBase() {
+	
+		
+	} */
+	
+	
+	private static void afficherBaseDeDonnees(List<Utilisateur> utilisateurs,
+			List<TypeLivre> typeslivres, List<Livre> livres,
+			List<Exemplaire> exemplaires, List<Emprunt> emprunts) {
+
+        System.out.println("============================");
+        System.out.println(" AFFICHAGE DES UTILISATEURS ");
+        System.out.println("============================");
+        
+        for (Utilisateur utilisateur : utilisateurs) {
+        	System.out.println(utilisateur);
+        }
+        
+        /*System.out.println("============================");
+        System.out.println(" AFFICHAGE DES TYPES LIVRES ");
+        System.out.println("============================");
+        
+        for (TypeLivre typelivre : typeslivres) {
+        	System.out.println(typelivre);
+        }
+        
+        System.out.println("============================");
+        System.out.println("    AFFICHAGE DES LIVRES    ");
+        System.out.println("============================");
+        
+        for (Livre livre : livres) {
+        	System.out.println(livre);
+        } */
+        
+        /* System.out.println("============================");
+        System.out.println(" AFFICHAGE DES EXEMPLAIRES  ");
+        System.out.println("============================");
+        
+        for (Exemplaire exemplaire : exemplaires) {
+        	System.out.println(exemplaire);
+        }
+        
+        System.out.println("============================");
+        System.out.println("   AFFICHAGE DES EMPRUNTS   ");
+        System.out.println("============================");
+        
+        for (Emprunt emprunt : emprunts) {
+        	System.out.println(emprunt);
+        }*/
+	}
+
+>>>>>>> e49f7e3b4ca07034eea6dccda0daf680937c7c9e
 }
