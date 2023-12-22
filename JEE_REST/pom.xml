@@ -47,6 +47,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+		
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-validation</artifactId>
+	</dependency>
+	<dependency>
+  		<groupId>org.springdoc</groupId>
+	 	<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+ 	 	<version>2.0.3</version>
+	</dependency>
+=======
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,8 +74,11 @@
 			<version>2.0.3</version>
 		</dependency>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> efb7d78c5f0d84aa36c4abab68d16a062ea652ed
 >>>>>>> e49f7e3b4ca07034eea6dccda0daf680937c7c9e
 	</dependencies>
 
