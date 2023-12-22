@@ -1,11 +1,6 @@
 package m2i.projet.JEE_REST.service.imp;
 
-<<<<<<< HEAD
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-=======
 import java.util.List;
->>>>>>> e49f7e3b4ca07034eea6dccda0daf680937c7c9e
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
