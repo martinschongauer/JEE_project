@@ -2,8 +2,10 @@ package m2i.projet.JEE_REST.service.imp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import m2i.projet.JEE_REST.dto.UtilisateurDTO;
 import m2i.projet.JEE_REST.entity.Emprunt;
@@ -11,7 +13,10 @@ import m2i.projet.JEE_REST.entity.Utilisateur;
 import m2i.projet.JEE_REST.repository.UtilisateurRepository;
 import m2i.projet.JEE_REST.service.UtilisateurService;
 
+@Service
 public class UtilisateurServiceImp implements UtilisateurService {
+	
+	
 	@Autowired
 	UtilisateurRepository utilisateurRepository;
 
@@ -52,15 +57,26 @@ public class UtilisateurServiceImp implements UtilisateurService {
 		user = utilisateurRepository.getClientWithMail(userDTO.getMailUser());
 		// supression de l'utilisateur
 		deleteUser(user);
+
 	}
 
 	@Override
-	public void updateUser(UtilisateurDTO updatedUSer) {
-		Utilisateur user = new Utilisateur();
-		//recupération de l'utilisateur depuuis l'utilisateur DTO
-		user = getUser(updatedUSer.getMailUser());
-		// mise a jour de l'utilisateur
-		utilisateurRepository.save(user);		
+	public void updateUser(UtilisateurDTO userDTO, Integer id) {
+		Utilisateur userToUpdate = new Utilisateur();
+		Optional<Utilisateur> userTampon = utilisateurRepository.findById(id);
+		if(userTampon.isPresent())
+		{
+			userToUpdate = userTampon.get();
+			userToUpdate.setNomUser(userDTO.getNomUser());
+			userToUpdate.setPrenomUser(userDTO.getPrenomUser());
+			userToUpdate.setMailUser(userDTO.getMailUser());
+			// mise a jour de l'utilisateur
+			utilisateurRepository.save(userToUpdate);	
+		}else 
+		{
+			return;
+		}
+	
 	}
 
 	@Override
@@ -77,6 +93,8 @@ public class UtilisateurServiceImp implements UtilisateurService {
 			usersDTO.add(new UtilisateurDTO(u));
 		}
 		return usersDTO;
+		
+			
 	}
 
 	@Override
