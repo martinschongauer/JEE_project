@@ -1,7 +1,9 @@
 package m2i.projet.JEE_REST.entity;
 
 import java.util.Objects;
+import java.util.Optional;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,8 +21,8 @@ public class Exemplaire {
 	private String isbnLivre;
 	private String integriteLivre;
 	
-	/* @OneToOne(mappedBy = "exemplaire")
-	private Emprunt emprunt; */
+	@OneToOne(mappedBy = "exemplaire", cascade = CascadeType.ALL)
+	private Emprunt emprunt;
 	
 	public String getIsbnLivre() {
 		return isbnLivre;
@@ -40,6 +42,12 @@ public class Exemplaire {
 	
 	public Integer getIdExemplaire() {
 		return idExemplaire;
+	}
+	
+	
+
+	public void setIdExemplaire(Integer idExemplaire) {
+		this.idExemplaire = idExemplaire;
 	}
 
 	public Exemplaire() {
@@ -74,6 +82,16 @@ public class Exemplaire {
 	public String toString() {
 		return "Exemplaire [idExemplaire=" + idExemplaire + ", isbnLivre=" + isbnLivre + ", integriteLivre="
 				+ integriteLivre + "]";
+	}
+
+	public void setIsbnLivre(Optional<String> isbn) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setIntegriteLivre(Optional<String> integrite) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

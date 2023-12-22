@@ -15,25 +15,16 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Emprunt {
 	
-	/*@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;*/
-	
-	/*@JsonIgnoreProperties
-	@OneToOne
-	@JoinColumn(name = "id_exemplaire")
-	Exemplaire exemplaire;*/
-	
 	@Id
     private Integer id; // Clé primaire de Emprunt
 
-    @OneToOne
+    @OneToOne 
     @MapsId("id")
     @JoinColumn(name = "id_exemplaire")
     private Exemplaire exemplaire;
 
 	@JsonIgnoreProperties
-	@ManyToOne
+	@ManyToOne 
 	@JoinColumn(name = "id_utilisateur")
 	Utilisateur utilisateur;
 	

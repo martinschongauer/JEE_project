@@ -34,18 +34,28 @@ LIVRES (LivreService.java et son implémentation + controllers) - BAPTISTE :
 	-> filtrer par auteur comprenant...
 	-> filtrer par titre comprenant...
 
-(Suggestion de Quentin: ajouter le nombre d'exemplaires dispos ?)
+(Suggestion de Quentin: ajouter le nombre d'exemplaires dispos ?) --> Fait dans exemplaire
 
 
 ------------ ROMANE --------------
 
 EXEMPLAIRES
 
-- trouver le nombre d'exemplaires total et disponibles en fonction de l'ISBN (dans le controleur abonné)
-- trouver le nombre d'exemplaires totaux et empruntés en fonction de l'ISBN (dans le controleur biblio)
+- Save un exemplaire X
+- Supprimer un exemplaire par son ID X
+- Trouver un exemplaire par son ID X
+- Update l'état d'un exemplaire
+ 
+- Lister les exemplaires totaux d'un livre selon l'isbn X
+- Lister les exemplaires disponibles d'un livre selon l'isbn X
+- Lister les exemplaires indisponibles d'un livre selon l'isbn X
+
+- Compter les exemplaires totaux d'un livre selon l'isbn X
+- Compter les exemplaires disponibles d'un livre selon l'isbn X
+- Compter les exemplaires indisponibles d'un livre selon l'isbn X
 
 
 
 TYPELIVRES / LIVRE ? :
 
-- Une méthode qui affiche tous les livres 
+- Une méthode qui affiche tous les livres -> Plutôt dans livre non ?

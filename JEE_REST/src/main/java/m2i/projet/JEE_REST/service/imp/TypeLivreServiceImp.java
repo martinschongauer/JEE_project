@@ -3,12 +3,14 @@ package m2i.projet.JEE_REST.service.imp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import m2i.projet.JEE_REST.dto.TypeLivreDTO;
 import m2i.projet.JEE_REST.entity.TypeLivre;
 import m2i.projet.JEE_REST.repository.TypeLivreRepository;
 import m2i.projet.JEE_REST.service.TypeLivreService;
 
+@Service
 public class TypeLivreServiceImp implements TypeLivreService {
 	@Autowired
 	TypeLivreRepository typeLivreRepository;
